@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--Purple: #3f2b96;
+	--PurpleLight: #7f74ee;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--Purple);
+}
+
+p {
+	color: var(--PurpleLight);
+}
+
+li {
+	list-style-type: none;
+}
+
+.widecard {
+	background-color: lightgrey;
+	border-radius: 15px;
+	margin: 1rem;
+	padding: 1rem;
+	box-shadow: 3px 3px 3px gray;
+}
+
+.widecard > * {
+	padding: 0.25rem;
+}
+
+.widecard,
+h3,
+h4 {
+	color: var(--PurpleLight);
+}
+
+/* Day and Night toggle */
+/* ------------------------------------------------*/
+
+.Toggle {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+}
+
+.Toggle input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.Tslider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url(https://i.postimg.cc/857jHw2q/Screenshot-2020-04-16-at-1-07-06-PM.png);
+	background-size: cover;
+	/* background-color: #ccc; */
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.Tslider:before {
+	position: absolute;
+	content: '';
+	height: 24px;
+	width: 24px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .Tslider {
+	background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png);
+	background-size: cover;
+	/* background-color: #ffa500; */
+}
+
+input:checked + .Tslider:before {
+	-webkit-transform: translateX(28px);
+	-ms-transform: translateX(28px);
+	transform: translateX(28px);
+}
+
+.Tslider.round {
+	border-radius: 34px;
+}
+
+.Tslider.round:before {
+	border-radius: 50%;
+}
+
+/* ------------------------------------------------*/
+
+/* Side Nav */
+/* ------------------------------------------------*/
+.App {
+	width: 100vw;
+	display: flex;
+}
+
+.sidenav {
+	height: 100vh;
+	width: 30vw;
+	background-image: linear-gradient(to bottom, #a8c0ff 50%, var(--Purple) 80%);
+	color: white;
+	font-size: 1.5rem;
+	padding: 3em;
+}
+
+.navitem {
+	margin: 1.5rem auto;
+	text-align: center;
+}
+
+.navitem:hover {
+	font-weight: bold;
+}
+
+.navitem-text {
+	text-decoration: none;
+	color: honeydew;
+}
+
+.Active {
+	font-weight: bold;
+}
+/* ------------------------------------------------*/
+
+/* Home Page */
+/* ------------------------------------------------*/
+/*
+@keyframes example {
+	from {
+		background-image: url('./img/Content.jpg');
+		position: relative;
+		width: 70vw;
+		height: 100vh;
+		max-width: 100%;
+		max-height: 100%;
+		background-position: 50% 50%;
+		background-size: cover;
+		border: 2px solid var(--Purple);
+	}
+	to {
+		display: none;
+	}
+}
+
+.ContentStateHome {
+	animation-name: example;
+	animation-duration: 3s;
+}
+*/
+
+.ContentStateHome {
+	background-image: url('./img/Content.jpg');
+	position: absolute;
+	width: 70vw;
+	height: 100vh;
+	display: flex;
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+	z-index: 1000;
+}
+
+.ContentStateHome:hover {
+	display: none;
+}
+
+.homeContent {
+	width: 70vw;
+	height: 100vh;
+	/* flex: 1; */
+	background: linear-gradient(
+			rgba(200, 200, 200, 0.85),
+			rgba(200, 200, 200, 0.85)
+		),
+		url('./img/Content.jpg');
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+}
+
+.contents img {
+	border-radius: 50%;
+	border: 3px solid var(--PurpleLight);
+	width: 12rem;
+	height: 12rem;
+}
+
+#typeEffect {
+	margin: 5rem;
+	font-size: 2em;
+	font-weight: 500;
+	color: var(--PurpleLight);
+}
+
+.social a {
+	margin: 1rem;
+	font-size: 2rem;
+	color: var(--Purple);
+}
+
+.homeContent h3 {
+	margin-bottom: 5rem;
+}
+
+.NameText {
+	color: var(--PurpleLight);
+	margin-top: 5rem;
+	margin-bottom: 3rem;
+}
+
+/* ------------------------------------------------*/
+
+/* About Me */
+/* ------------------------------------------------*/
+.ContentStateAbout {
+	background-image: url('./img/AboutMe.jpg');
+	position: absolute;
+	width: 70vw;
+	height: 100vh;
+	display: flex;
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+	/* transition: 0.9s; */
+	z-index: 1000;
+}
+
+.ContentStateAbout:hover {
+	display: none;
+}
+
+.aboutContent {
+	height: 100vh;
+	width: 70vw;
+	background: linear-gradient(
+			rgba(200, 200, 200, 0.85),
+			rgba(200, 200, 200, 0.85)
+		),
+		url('./img/AboutMe.jpg');
+	background-position: center;
+	background-size: cover;
+	border: 2px solid var(--Purple);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.aboutContent p {
+	margin: 1rem 0;
+	text-align: justify;
+}
+
+/* ------------------------------------------------*/
+
+/* Education */
+/* ------------------------------------------------*/
+.ContentStateEducation {
+	background-image: url('./img/Education.jpg');
+	position: absolute;
+	width: 70vw;
+	height: 100vh;
+	display: flex;
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+	/* transition: 0.9s; */
+	z-index: 1000;
+}
+
+.ContentStateEducation:hover {
+	display: none;
+}
+
+.educationContent {
+	height: 100vh;
+	width: 70vw;
+	background: linear-gradient(
+			rgba(200, 200, 200, 0.85),
+			rgba(200, 200, 200, 0.85)
+		),
+		url('./img/Education.jpg');
+	background-position: center;
+	background-size: cover;
+	border: 2px solid var(--Purple);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 2rem;
+}
+
+/* ------------------------------------------------*/
+
+/* Skills */
+/* ------------------------------------------------*/
+.ContentStateSkills {
+	background-image: url('./img/Skills.jpg');
+	position: absolute;
+	width: 70vw;
+	height: 100vh;
+	display: flex;
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+	/* transition: 0.9s; */
+	z-index: 1000;
+}
+
+.ContentStateSkills:hover {
+	display: none;
+}
+
+.skillsContent {
+	height: 100vh;
+	width: 70vw;
+	background: linear-gradient(
+			rgba(200, 200, 200, 0.85),
+			rgba(200, 200, 200, 0.85)
+		),
+		url('./img/Skills.jpg');
+	background-position: center;
+	background-size: cover;
+	border: 2px solid var(--Purple);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 2rem;
+}
+
+/* ------------------------------------------------*/
+
+/* Contact */
+/* ------------------------------------------------*/
+.ContentStateContact {
+	background-image: url('./img/Unsure.jpg');
+	position: absolute;
+	width: 70vw;
+	height: 100vh;
+	display: flex;
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+	/* transition: 0.9s; */
+	z-index: 1000;
+}
+
+.ContentStateContact:hover {
+	display: none;
+}
+
+.contactContent {
+	height: 100vh;
+	width: 70vw;
+	background: linear-gradient(
+			rgba(200, 200, 200, 0.85),
+			rgba(200, 200, 200, 0.85)
+		),
+		url('./img/Unsure.jpg');
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid var(--Purple);
+	align-items: center;
+	padding: 2rem;
+}
+
+.contactContent input,
+textarea,
+button {
+	background-color: #a8c0ff;
+	border: 1px solid var(--Purple);
+	border-radius: 15px;
+	box-shadow: 3px 3px 3px gray;
+	width: 40vw;
+	height: 5vh;
+	margin: 1rem;
+	padding: 1rem;
+}
+
+.contactContent textarea {
+	height: 15vh;
+}
+
+.contactContent button {
+	background-color: lightgreen;
+	border: 1px solid lightgreen;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: white;
+}
+
+/* ------------------------------------------------*/
